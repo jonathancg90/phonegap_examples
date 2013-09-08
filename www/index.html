@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
 
@@ -14,104 +13,52 @@
     </head>
     <body>
 
-        <div data-role="page" id="page-menu" >
-            <div data-role="header" data-theme="b">
-                <h1>Header</h1>
-                <a href="">More</a>
-                <a href="">Config</a>
-            </div>
-            <div data-role="content" data-theme="f">
-                <a href="#page-info" data-role="button" data-theme="a">Tu informacion</a>
-                <a href="camara.html" data-role="button" data-theme="a" data-transition="slideup">Camara</a>
-                <a href="#page3" data-role="button" data-theme="a" data-inline="true" data-transition="slide">Boton 1</a>
-                <a href="#page4" data-role="button" data-theme="b" data-inline="true" data-transition="slide">Boton 2</a>
-                <a href="#confirmar" data-role="button" data-theme="a" data-rel="dialog" data-transition="flip">Salir</a>
-            </div>
-            <div data-role="footer" class="ui-bar" data-id="pie-fijo" data-position="fixed">
-                <div data-role="controlgroup">
-                    <a href="" data-icon="plus">Facebook</a>
-                    <a href="" data-icon="delete">Twiter</a>
-                </div>
-            </div>
-        </div>
+    <div data-role="page" id="deviceready">
 
-        <div data-role="page" id="page-info">
-            <div data-role="header">
-                <h1>Mi informacion</h1>
-            </div>
-            <div data-role="content">
-                <a href="#page-menu" data-role="button">Menu</a>
-            </div>
-            <div data-role="footer"></div>
-        </div>
+        <div data-role="header" data-position="fixed">
+            <h1>Device Info</h1>
+        </div><!-- /header -->
 
-        <div data-role="page" id="page3" >
-            <div data-role="header" data-position="fixed">
-                <h1>Pagina 3</h1>
-                <a href="#page-menu" data-theme="b" data-rel="back">Menu</a>
-            </div>
-            <div data-role="content">
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-            </div>
-            <div data-role="footer" data-id="pie-fijo" class="ui-bar" data-position="fixed">
-                <h2>Footer</h2>
-                <div data-role="controlgroup">
-                    <a href="" data-icon="plus">Facebook</a>
-                    <a href="" data-icon="delete">Twiter</a>
-                </div>
-            </div>
-        </div>
+        <div data-role="content">
+            <div class="content-primary">
+                <ul data-role="listview">
+                    <li>
+                        <h3><a href="ui_mobile.html">JQuery Mobile</a></h3>
 
-        <div data-role="page" id="page4">
-            <div data-role="header" data-position="fixed">
-                <h1>Pagina 4</h1>
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#page-menu" >Menu</a></li>
-                        <li><a href="">Segundo</a></li>
-                        <li><a href="">Tercero</a></li>
-                        <li><a href="" class="ui-btn-active">Cuarto</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content">
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-            </div>
-            <div data-role="footer"></div>
-        </div>
-        <div data-role="page" id="confirmar">
-            <div data-role="header">
-                <h1>Confirmacion</h1>
-            </div>
-            <div data-role="content">
-                <p>¿ Desea salir ?</p>
-                <div data-role="controlgroup" data-type="horizontal">
-                    <a href="#page-index" data-role="button" data-theme="b" data-inline="true" data-rel="back" data-icon="plus">Ok</a>
-                    <a href="#page-index" data-role="button" data-theme="b" data-inline="true" data-rel="back" data-icon="delete">Cancelar</a>
-                </div>
-            </div>
-            <div data-role="footer"></div>
-        </div>
+                    </li>
+                    <li>
+                        <h3><a href="cor_hello.html">HelloWorld</a></h3>
 
-        <!--<div class="app">-->
-            <!--<h1>PhoneGap</h1>-->
-            <!--<div id="deviceready" class="blink">-->
-                <!--<p class="event listening">Connecting to Device</p>-->
-                <!--<p class="event received">Device is Ready</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <script type="text/javascript" src="phonegap.js"></script>
-        <!--<script type="text/javascript" src="js/index.js"></script>-->
-        <!--Jquery -->
+                    </li>
+                    <li>
+                        <h3>Informacion</h3>
+                        <p id="version"></p>
+
+                    </li>
+                    <li>
+                        <h3>Platform</h3>
+                        <p id="platform"></p>
+
+                    </li>
+                    <li>
+                        <h3>Device UUID</h3>
+                        <p id="uuid"></p>
+
+                    </li>
+                    <li>
+                        <h3>OS Version</h3>
+                        <p id="device-vesion"></p>
+
+                    </li>
+                </ul>
+            </div><!--/content-primary -->
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" >
+            <h4>Phonegap Examples</h4>
+        </div>
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <!--Jquery Mobile -->
         <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>
