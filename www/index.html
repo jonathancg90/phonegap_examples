@@ -82,9 +82,13 @@
 
 <div data-role="page" id="siguiente">
     <div data-role="header">
-
+        <h1>Hello World Perú</h1>
     </div>
     <div data-role="content">
+    <a href="" data-role="button" id="obtener">Saber</a>
+        <p id="x">X:</p>
+        <p id="y">Y:</p>
+        <p id="z">Z:</p>
 
     </div>
     <div data-role="footer">
@@ -99,6 +103,26 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize();
+
+    $(document).on('ready', function(){
+       $('#obtener').on('click', function(){
+           function onSuccess(acceleration) {
+               $('#x').html(acceleration.x);
+               $('#y').html(acceleration.y);
+               $('#z').html(acceleration.z );
+//               alert('Acceleration X: ' + acceleration.x + '\n' +
+//                       'Acceleration Y: ' + acceleration.y + '\n' +
+//                       'Acceleration Z: ' + acceleration.z + '\n' +
+//                       'Timestamp: '      + acceleration.timestamp + '\n');
+           };
+
+           function onError() {
+               alert('onError!');
+           };
+
+           navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+       });
+    });
 </script>
 
 </body>
