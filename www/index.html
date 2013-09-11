@@ -77,14 +77,15 @@
         <h4>PhoneGap 3 Tutorial First App</h4>
     </div>
 
-</div><!-- /page -->
+</div>
 
+<!-- /Acelerometro -->
 
 <div data-role="page" id="acelerometro">
     <div data-role="header">
         <h1>Hello World Perú</h1>
         <a href="#deviceready">Volver</a>
-        <a href="">Siguiente</a>
+        <a href="#camara">Siguiente</a>
     </div>
     <div data-role="content">
     <a href="" data-role="button" id="obtener">Saber</a>
@@ -92,6 +93,24 @@
         <p id="y">Y:</p>
         <p id="z">Z:</p>
 
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>PhoneGap 3 Tutorial Second App</h4>
+    </div>
+
+</div>
+
+<!-- /Camara -->
+
+<div data-role="page" id="camara">
+    <div data-role="header">
+        <h1>Hello World Perú</h1>
+        <a href="#acelerometro">Volver</a>
+        <a href="">Siguiente</a>
+    </div>
+    <div data-role="content">
+        <a href="" data-role="button" id="obtener">Tomar una foto</a>
+        <img id='camera-picture' src="http://placehold.it/260x180"/>
     </div>
     <div data-role="footer" data-position="fixed">
         <h4>PhoneGap 3 Tutorial Second App</h4>
@@ -124,6 +143,22 @@
                        frequency:500
                    });
            });
+        $('#tomar').on('click', function(){
+            navigator.camera.getPicture(
+                    function(data) {
+                        // success callback
+                        $('#camera-picture').attr('src', 'data:image/jpeg;base64,' + data);
+                    },
+                    function() {
+                        // error callback
+                        console.log('error getting picture', arguments);
+                    }, {
+                        // options
+                        destinationType: Camera.DestinationType.DATA_URL
+                    }
+            );
+        });
+
         });
 
 </script>
