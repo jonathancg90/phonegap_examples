@@ -109,7 +109,7 @@
         <a href="">Siguiente</a>
     </div>
     <div data-role="content">
-        <a href="" data-role="button" id="obtener">Tomar una foto</a>
+        <a href="" data-role="button" id="tomar">Tomar una foto</a>
         <img id='camera-picture' src="http://placehold.it/260x180"/>
     </div>
     <div data-role="footer" data-position="fixed">
@@ -152,9 +152,6 @@
                     function() {
                         // error callback
                         console.log('error getting picture', arguments);
-                    }, {
-                        // options
-                        destinationType: Camera.DestinationType.DATA_URL
                     }
             );
         });
