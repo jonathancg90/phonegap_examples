@@ -33,7 +33,7 @@
 
     <div data-role="header" data-position="fixed">
         <h1>Device Info</h1>
-        <a href="#siguiente" data-role="button">Siguiente</a>
+        <a href="#acelerometro" data-role="button">Siguiente</a>
     </div><!-- /header -->
 
     <div data-role="content">
@@ -80,9 +80,11 @@
 </div><!-- /page -->
 
 
-<div data-role="page" id="siguiente">
+<div data-role="page" id="acelerometro">
     <div data-role="header">
         <h1>Hello World Perú</h1>
+        <a href="#deviceready">Volver</a>
+        <a href="">Siguiente</a>
     </div>
     <div data-role="content">
     <a href="" data-role="button" id="obtener">Saber</a>
@@ -91,7 +93,7 @@
         <p id="z">Z:</p>
 
     </div>
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h4>PhoneGap 3 Tutorial Second App</h4>
     </div>
 
@@ -106,23 +108,24 @@
 
     $(document).on('ready', function(){
        $('#obtener').on('click', function(){
-           function onSuccess(acceleration) {
-               $('#x').html(acceleration.x);
-               $('#y').html(acceleration.y);
-               $('#z').html(acceleration.z );
-//               alert('Acceleration X: ' + acceleration.x + '\n' +
-//                       'Acceleration Y: ' + acceleration.y + '\n' +
-//                       'Acceleration Z: ' + acceleration.z + '\n' +
-//                       'Timestamp: '      + acceleration.timestamp + '\n');
-           };
+           navigator.accelerometer.watchAcceleration(
+                   function(pos) {
+                       // success callback
+                       $('#x').html(pos.x);
+                       $('#y').html(pos.y);
+                       $('#z').html(pos.z);
+                   },
+                   function() {
+                       // error callback
+                       console.log('cannot get accelerometer', arguments);
+                   },
+                   {
+                       // options
+                       frequency:500
+                   });
+           });
+        });
 
-           function onError() {
-               alert('onError!');
-           };
-
-           navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-       });
-    });
 </script>
 
 </body>
