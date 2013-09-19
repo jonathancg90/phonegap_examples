@@ -1,127 +1,44 @@
 <!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
+
 <head>
-    <script src="cordova-1.7.0.js"></script>
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script>
-        var watermark;
-        var canvasDom;
-        var canvas;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PhoneGap 3 Tutorial First App</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
 
-        function init() {
-            document.addEventListener("deviceready", startUp, false);
-        }
-
-        function startUp() {
-
-            canvasDom = $("#myCanvas")[0];
-            canvas = canvasDom.getContext("2d");
-
-            //Create a watermark image object
-            watermark = new Image();
-            watermark.src = "rk.png";
-            watermark.onload = function(e) {
-                //you can only take pictures once this is loaded...
-                $("#takePictureButton").removeAttr("disabled");
-            }
-
-            $("#takePictureButton").on("touchstart", function(e) {
-                navigator.camera.getPicture(camSuccess, camError, {quality: 75, targetWidth: 400, targetHeight: 400, destinationType: Camera.DestinationType.FILE_URI});
-            });
-
-            function camError(e) {
-                console.log("Camera Error");
-                console.log(JSON.stringify(e));
-            }
-
-            function camSuccess(picuri) {
-                console.log("Camera Success");
-
-                var img = new Image();
-                img.src=picuri;
-
-                img.onload = function(e) {
-                    canvas.drawImage(img, 0, 0);
-                    canvas.drawImage(watermark, canvasDom.width-watermark.width, canvasDom.height - watermark.height);
-                }
-
-            }
-        }
-    </script>
-    <style>
-        #myCanvas {
-            width: 400px;
-            height: 400px;
-        }
-    </style>
 </head>
 
-<body onload="init()">
+<body>
 
-<h1>Watermark Test</h1>
+<div data-role="page" id="deviceready">
 
-<button id="takePictureButton" disabled>Take a Picture</button>
+    <div data-role="header" data-position="fixed">
+        <h1>Device Info</h1>
+        <a href="#acelerometro" data-role="button">Siguiente</a>
+    </div><!-- /header -->
 
-<p/>
-
-<canvas id="myCanvas"></canvas>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<!DOCTYPE html>-->
-<!--&lt;!&ndash;-->
-    <!--Licensed to the Apache Software Foundation (ASF) under one-->
-    <!--or more contributor license agreements.  See the NOTICE file-->
-    <!--distributed with this work for additional information-->
-    <!--regarding copyright ownership.  The ASF licenses this file-->
-    <!--to you under the Apache License, Version 2.0 (the-->
-    <!--"License"); you may not use this file except in compliance-->
-    <!--with the License.  You may obtain a copy of the License at-->
-
-    <!--http://www.apache.org/licenses/LICENSE-2.0-->
-
-    <!--Unless required by applicable law or agreed to in writing,-->
-    <!--software distributed under the License is distributed on an-->
-    <!--"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY-->
-     <!--KIND, either express or implied.  See the License for the-->
-    <!--specific language governing permissions and limitations-->
-    <!--under the License.-->
-<!--&ndash;&gt;-->
-<!--<html>-->
-
-<!--<head>-->
-    <!--<meta charset="utf-8">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <!--<title>PhoneGap 3 Tutorial First App</title>-->
-    <!--<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />-->
-
-<!--</head>-->
-
-<!--<body>-->
-
-<!--<div data-role="page" id="deviceready">-->
-
-    <!--<div data-role="header" data-position="fixed">-->
-        <!--<h1>Device Info</h1>-->
-        <!--<a href="#acelerometro" data-role="button">Siguiente</a>-->
-    <!--</div>&lt;!&ndash; /header &ndash;&gt;-->
-
-    <!--<div data-role="content">-->
-        <!--<div class="content-primary">-->
+    <div data-role="content">
+        <div class="content-primary">
+            <input type="text" x-webkit-speech name="" id="" value="" />
             <!--<ul data-role="listview">-->
                 <!--<li>-->
                     <!--<h3>Connection Type</a></h3>-->
@@ -154,95 +71,95 @@
 
                 <!--</li>-->
             <!--</ul>-->
-        <!--</div>&lt;!&ndash;/content-primary &ndash;&gt;-->
-    <!--</div>&lt;!&ndash; /content &ndash;&gt;-->
+        </div><!--/content-primary -->
+    </div><!-- /content -->
 
-    <!--<div data-role="footer" data-position="fixed" >-->
-        <!--<h4>PhoneGap 3 Tutorial First App</h4>-->
-    <!--</div>-->
+    <div data-role="footer" data-position="fixed" >
+        <h4>PhoneGap 3 Tutorial First App</h4>
+    </div>
 
-<!--</div>-->
+</div>
 
-<!--&lt;!&ndash; /Acelerometro &ndash;&gt;-->
+<!-- /Acelerometro -->
 
-<!--<div data-role="page" id="acelerometro">-->
-    <!--<div data-role="header">-->
-        <!--<h1>Hello World Perú</h1>-->
-        <!--<a href="#deviceready">Volver</a>-->
-        <!--<a href="#camara">Siguiente</a>-->
-    <!--</div>-->
-    <!--<div data-role="content">-->
-    <!--<a href="" data-role="button" id="obtener">Saber</a>-->
-        <!--<p id="x">X:</p>-->
-        <!--<p id="y">Y:</p>-->
-        <!--<p id="z">Z:</p>-->
+<div data-role="page" id="acelerometro">
+    <div data-role="header">
+        <h1>Hello World Perú</h1>
+        <a href="#deviceready">Volver</a>
+        <a href="#camara">Siguiente</a>
+    </div>
+    <div data-role="content">
+    <a href="" data-role="button" id="obtener">Saber</a>
+        <p id="x">X:</p>
+        <p id="y">Y:</p>
+        <p id="z">Z:</p>
 
-    <!--</div>-->
-    <!--<div data-role="footer" data-position="fixed">-->
-        <!--<h4>PhoneGap 3 Tutorial Second App</h4>-->
-    <!--</div>-->
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>PhoneGap 3 Tutorial Second App</h4>
+    </div>
 
-<!--</div>-->
+</div>
 
-<!--&lt;!&ndash; /Camara &ndash;&gt;-->
+<!-- /Camara -->
 
-<!--<div data-role="page" id="camara">-->
-    <!--<div data-role="header">-->
-        <!--<h1>Hello World Perú</h1>-->
-        <!--<a href="#acelerometro">Volver</a>-->
-        <!--<a href="">Siguiente</a>-->
-    <!--</div>-->
-    <!--<div data-role="content">-->
-        <!--<a href="" data-role="button" id="tomar">Tomar una foto</a>-->
-        <!--<img id='camera-picture' src="http://placehold.it/260x180"/>-->
-    <!--</div>-->
-    <!--<div data-role="footer" data-position="fixed">-->
-        <!--<h4>PhoneGap 3 Tutorial Second App</h4>-->
-    <!--</div>-->
+<div data-role="page" id="camara">
+    <div data-role="header">
+        <h1>Hello World Perú</h1>
+        <a href="#acelerometro">Volver</a>
+        <a href="">Siguiente</a>
+    </div>
+    <div data-role="content">
+        <a href="" data-role="button" id="tomar">Tomar una foto</a>
+        <img id='camera-picture' src="http://placehold.it/260x180"/>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>PhoneGap 3 Tutorial Second App</h4>
+    </div>
 
-<!--</div>-->
+</div>
 
-<!--<script src="js/jquery-1.10.2.min.js"></script>-->
-<!--<script src="js/jquery.mobile-1.3.2.min.js"></script>-->
-<!--<script type="text/javascript" src="phonegap.js"></script>-->
-<!--<script type="text/javascript" src="js/index.js"></script>-->
-<!--<script type="text/javascript">-->
-    <!--app.initialize();-->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
 
-    <!--$(document).on('ready', function(){-->
-       <!--$('#obtener').on('click', function(){-->
-           <!--navigator.accelerometer.watchAcceleration(-->
-                   <!--function(pos) {-->
-                       <!--// success callback-->
-                       <!--$('#x').html(pos.x);-->
-                       <!--$('#y').html(pos.y);-->
-                       <!--$('#z').html(pos.z);-->
-                   <!--},-->
-                   <!--function() {-->
-                       <!--// error callback-->
-                       <!--console.log('cannot get accelerometer', arguments);-->
-                   <!--},-->
-                   <!--{-->
-                       <!--// options-->
-                       <!--frequency:500-->
-                   <!--});-->
-           <!--});-->
-        <!--$('#tomar').on('click', function(){-->
-            <!--navigator.camera.getPicture(-->
-                    <!--function(data) {-->
-                        <!--// success callback-->
-                        <!--$('#camera-picture').attr('src', 'data:image/jpeg;base64,' + data);-->
-                    <!--},-->
-                    <!--function() {-->
-                        <!--// error callback-->
-                        <!--console.log('error getting picture', arguments);-->
-                    <!--}-->
-            <!--);-->
-        <!--});-->
+    $(document).on('ready', function(){
+       $('#obtener').on('click', function(){
+           navigator.accelerometer.watchAcceleration(
+                   function(pos) {
+                       // success callback
+                       $('#x').html(pos.x);
+                       $('#y').html(pos.y);
+                       $('#z').html(pos.z);
+                   },
+                   function() {
+                       // error callback
+                       console.log('cannot get accelerometer', arguments);
+                   },
+                   {
+                       // options
+                       frequency:500
+                   });
+           });
+        $('#tomar').on('click', function(){
+            navigator.camera.getPicture(
+                    function(data) {
+                        // success callback
+                        $('#camera-picture').attr('src', 'data:image/jpeg;base64,' + data);
+                    },
+                    function() {
+                        // error callback
+                        console.log('error getting picture', arguments);
+                    }
+            );
+        });
 
-        <!--});-->
+        });
 
-<!--</script>-->
+</script>
 
-<!--</body>-->
-<!--</html>-->
+</body>
+</html>
